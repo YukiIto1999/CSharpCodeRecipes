@@ -13,6 +13,7 @@
 | [ImplicitUnion](src/CSharpCodeRecipes/Recipes/ImplicitUnion/README.md) | 返せる型を型引数に限る和型 | 両方 | 処理が返す結果の種類を宣言する |
 | [InterpolatedSql](src/CSharpCodeRecipes/Recipes/InterpolatedSql/README.md) | 補間した値を必ずパラメータにする SQL | 基盤 | ドメインに連結した SQL を書かせない |
 | [NoPermissionPublicMethod](src/CSharpCodeRecipes/Recipes/NoPermissionPublicMethod/README.md) | Override以外のPublicメソッドの作成禁止 | 基盤 | サービスの実装に入口を増やさせない |
+| [PlatformOnlyMember](src/CSharpCodeRecipes/Recipes/PlatformOnlyMember/README.md) | 基盤だけが呼べるメンバーをドメインが継承する型に置く | 基盤 | ドメインが継承する基底に基盤専用の操作を置く |
 | [StaticAbstractContract](src/CSharpCodeRecipes/Recipes/StaticAbstractContract/README.md) | 静的メンバーの規約を static abstract で型に出す | 基盤 | ドメインの型に変換方法を要求する |
 | [Typestate](src/CSharpCodeRecipes/Recipes/Typestate/README.md) | 状態ごとの型で誤った操作を禁じる | ドメイン | 業務の状態遷移で誤った操作を禁じる |
 
