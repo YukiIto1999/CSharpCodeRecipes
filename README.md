@@ -1,19 +1,20 @@
 # CSharpCodeRecipes
 
-C# の実装パターンを、実行できるサンプルとそれを検査するテストの組で集めたリポジトリである。
+言語の仕組みで設計上の制約を守らせる C# の実装パターンを、実行できるサンプルとそれを検査するテストの組で集めたリポジトリである。
+各レシピには、基盤側とドメイン側のどちらがどの場面で使うかを添えている。
 
 ## レシピ一覧
 
-| レシピ | 概要 |
-|---|---|
-| [CapabilityConstraint](src/CSharpCodeRecipes/Recipes/CapabilityConstraint/README.md) | 必要な依存をジェネリック制約で型に出す |
-| [ClosedHierarchy](src/CSharpCodeRecipes/Recipes/ClosedHierarchy/README.md) | 別アセンブリからの派生を禁じる閉じた型階層 |
-| [HideInheritedMember](src/CSharpCodeRecipes/Recipes/HideInheritedMember/README.md) | 継承したメソッドの呼出しをコンパイルエラーにする |
-| [ImplicitUnion](src/CSharpCodeRecipes/Recipes/ImplicitUnion/README.md) | 返せる型を型引数に限る和型 |
-| [InterpolatedSql](src/CSharpCodeRecipes/Recipes/InterpolatedSql/README.md) | 補間した値を必ずパラメータにする SQL |
-| [NoPermissionPublicMethod](src/CSharpCodeRecipes/Recipes/NoPermissionPublicMethod/README.md) | Override以外のPublicメソッドの作成禁止 |
-| [StaticAbstractContract](src/CSharpCodeRecipes/Recipes/StaticAbstractContract/README.md) | 静的メンバーの規約を static abstract で型に出す |
-| [Typestate](src/CSharpCodeRecipes/Recipes/Typestate/README.md) | 状態ごとの型で誤った操作を禁じる |
+| レシピ | 概要 | 使う側 | 場面 |
+|---|---|---|---|
+| [CapabilityConstraint](src/CSharpCodeRecipes/Recipes/CapabilityConstraint/README.md) | 必要な依存をジェネリック制約で型に出す | 両方 | ドメインの処理の依存を宣言し基盤が実体を渡す |
+| [ClosedHierarchy](src/CSharpCodeRecipes/Recipes/ClosedHierarchy/README.md) | 別アセンブリからの派生を禁じる閉じた型階層 | 基盤 | 基盤が所有する場合分けの種類を増やさせない |
+| [HideInheritedMember](src/CSharpCodeRecipes/Recipes/HideInheritedMember/README.md) | 継承したメソッドの呼出しをコンパイルエラーにする | 基盤 | ライブラリの基底クラスの危険な操作を塞ぐ |
+| [ImplicitUnion](src/CSharpCodeRecipes/Recipes/ImplicitUnion/README.md) | 返せる型を型引数に限る和型 | 両方 | 処理が返す結果の種類を宣言する |
+| [InterpolatedSql](src/CSharpCodeRecipes/Recipes/InterpolatedSql/README.md) | 補間した値を必ずパラメータにする SQL | 基盤 | ドメインに連結した SQL を書かせない |
+| [NoPermissionPublicMethod](src/CSharpCodeRecipes/Recipes/NoPermissionPublicMethod/README.md) | Override以外のPublicメソッドの作成禁止 | 基盤 | サービスの実装に入口を増やさせない |
+| [StaticAbstractContract](src/CSharpCodeRecipes/Recipes/StaticAbstractContract/README.md) | 静的メンバーの規約を static abstract で型に出す | 基盤 | ドメインの型に変換方法を要求する |
+| [Typestate](src/CSharpCodeRecipes/Recipes/Typestate/README.md) | 状態ごとの型で誤った操作を禁じる | ドメイン | 業務の状態遷移で誤った操作を禁じる |
 
 ## 実行
 
@@ -66,6 +67,7 @@ namespace CSharpCodeRecipes.Recipes.Xxx
 }
 ```
 
-レシピの解説は同じフォルダの `README.md` に書き、このファイルのレシピ一覧へ一行加える。
+レシピの解説は同じフォルダの `README.md` に書き、誰がどの場面で何を防ぐために使うかを「使いどころ」の節に書く。
+このファイルのレシピ一覧には、使う側と場面を添えて一行加える。
 レシピ固有のテストは `tests/CSharpCodeRecipes.Tests/Recipes/<レシピ名>/` に置く。
 別アセンブリからの誤った使い方がコンパイルエラーになることは、そのソースを `ExternalCompilation.ErrorIds` に渡し、返るエラーの診断 ID で確かめる。

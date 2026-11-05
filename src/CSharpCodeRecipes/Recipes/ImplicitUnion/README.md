@@ -4,6 +4,12 @@
 候補の型の値からの暗黙の変換でしか構築できないので、型引数にない型の値を返すコードは CS0029 のコンパイルエラーになる。
 ASP.NET Core の [`Results<TResult1, TResult2>`](https://github.com/dotnet/aspnetcore/blob/1c94b15aa54d3d490d0ee060b7d496db3cb291e7/src/Http/Http.Results/src/ResultsOfT.Generated.cs#L24-L62) も、エンドポイントが返せる応答をこの形で限っている。
 
+## 使いどころ
+
+サービスや Web API の境界で、処理が返す結果の種類を宣言するときに使う。
+基盤側とドメイン側のどちらでも、戻り値の型を見るだけで起こり得る結果が分かる。
+宣言にない種類の結果を返すコードは書けないので、呼び出し側が想定していない結果の追加を防げる。
+
 ## 仕組み
 
 | 宣言 | 書き方 | 効果 |
