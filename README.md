@@ -8,6 +8,7 @@ C# の実装パターンを、実行できるサンプルとそれを検査す�
 |---|---|
 | [ClosedHierarchy](src/CSharpCodeRecipes/Recipes/ClosedHierarchy/README.md) | 別アセンブリからの派生を禁じる閉じた型階層 |
 | [ImplicitUnion](src/CSharpCodeRecipes/Recipes/ImplicitUnion/README.md) | 返せる型を型引数に限る和型 |
+| [InterpolatedSql](src/CSharpCodeRecipes/Recipes/InterpolatedSql/README.md) | 補間した値を必ずパラメータにする SQL |
 | [NoPermissionPublicMethod](src/CSharpCodeRecipes/Recipes/NoPermissionPublicMethod/README.md) | Override以外のPublicメソッドの作成禁止 |
 | [Typestate](src/CSharpCodeRecipes/Recipes/Typestate/README.md) | 状態ごとの型で誤った操作を禁じる |
 
