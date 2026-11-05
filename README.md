@@ -61,3 +61,4 @@ namespace CSharpCodeRecipes.Recipes.Xxx
 
 レシピの解説は同じフォルダの `README.md` に書き、このファイルのレシピ一覧へ一行加える。
 レシピ固有のテストは `tests/CSharpCodeRecipes.Tests/Recipes/<レシピ名>/` に置く。
+別アセンブリからの誤った使い方がコンパイルエラーになることは、そのソースを `ExternalCompilation.ErrorIds` に渡し、返るエラーの診断 ID で確かめる。
