@@ -6,6 +6,7 @@ C# の実装パターンを、実行できるサンプルとそれを検査す�
 
 | レシピ | 概要 |
 |---|---|
+| [CapabilityConstraint](src/CSharpCodeRecipes/Recipes/CapabilityConstraint/README.md) | 必要な依存をジェネリック制約で型に出す |
 | [ClosedHierarchy](src/CSharpCodeRecipes/Recipes/ClosedHierarchy/README.md) | 別アセンブリからの派生を禁じる閉じた型階層 |
 | [ImplicitUnion](src/CSharpCodeRecipes/Recipes/ImplicitUnion/README.md) | 返せる型を型引数に限る和型 |
 | [InterpolatedSql](src/CSharpCodeRecipes/Recipes/InterpolatedSql/README.md) | 補間した値を必ずパラメータにする SQL |
