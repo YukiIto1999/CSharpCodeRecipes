@@ -1,0 +1,62 @@
+# CSharpCodeRecipes
+
+C# の実装パターンを、実行できるサンプルとそれを検査するテストの組で集めたリポジトリである。
+
+## レシピ一覧
+
+| レシピ | 概要 |
+|---|---|
+
+## 実行
+
+.NET 10 SDK が必要である。
+Visual Studio で開く場合は、.NET 10 SDK が要求する MSBuild 18 を含む Visual Studio 2026 を使う。
+
+次のコマンドはレシピの一覧を表示し、入力された番号か名前のレシピを実行する。
+
+```bash
+dotnet run --project src/CSharpCodeRecipes
+```
+
+`<レシピ名>` の位置に一覧のレシピ名か番号を渡すと、一覧を表示せずにそのレシピを実行する。
+
+```bash
+dotnet run --project src/CSharpCodeRecipes -- <レシピ名>
+```
+
+テストは次のコマンドで実行する。
+
+```bash
+dotnet test
+```
+
+## レシピの追加
+
+レシピは `src/CSharpCodeRecipes/Recipes/<レシピ名>/` に一つずつ置き、名前空間を `CSharpCodeRecipes.Recipes.<レシピ名>` にする。
+同じフォルダに `IRecipe` を実装した `<レシピ名>Recipe` クラスを置くと、そのレシピは一覧に自動で加わる。
+`IRecipe.Name` はフォルダ名と同じ値にし、その一致は `RecipeCatalogTests` が検査する。
+
+```csharp
+namespace CSharpCodeRecipes.Recipes.Xxx
+{
+    /// <summary>
+    /// ○○を実演するレシピ
+    /// </summary>
+    internal sealed class XxxRecipe : IRecipe
+    {
+        /// <inheritdoc />
+        string IRecipe.Name => "Xxx";
+
+        /// <inheritdoc />
+        string IRecipe.Description => "○○";
+
+        /// <inheritdoc />
+        void IRecipe.Run()
+        {
+        }
+    }
+}
+```
+
+レシピの解説は同じフォルダの `README.md` に書き、このファイルのレシピ一覧へ一行加える。
+レシピ固有のテストは `tests/CSharpCodeRecipes.Tests/Recipes/<レシピ名>/` に置く。
