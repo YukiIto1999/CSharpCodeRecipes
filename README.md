@@ -7,6 +7,7 @@
 
 | レシピ | 概要 | 使う側 | 場面 |
 |---|---|---|---|
+| [ApiStatusDiagnostics](src/CSharpCodeRecipes/Recipes/ApiStatusDiagnostics/README.md) | 基盤 API の試験的と非推奨を診断 ID で伝える | 基盤 | API の入れ替えをドメインの各チームに伝える |
 | [CapabilityConstraint](src/CSharpCodeRecipes/Recipes/CapabilityConstraint/README.md) | 必要な依存をジェネリック制約で型に出す | 両方 | ドメインの処理の依存を宣言し基盤が実体を渡す |
 | [ClosedHierarchy](src/CSharpCodeRecipes/Recipes/ClosedHierarchy/README.md) | 別アセンブリからの派生を禁じる閉じた型階層 | 基盤 | 基盤が所有する場合分けの種類を増やさせない |
 | [HideInheritedMember](src/CSharpCodeRecipes/Recipes/HideInheritedMember/README.md) | 継承したメソッドの呼出しをコンパイルエラーにする | 基盤 | ライブラリの基底クラスの危険な操作を塞ぐ |
