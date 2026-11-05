@@ -6,6 +6,7 @@ C# の実装パターンを、実行できるサンプルとそれを検査す�
 
 | レシピ | 概要 |
 |---|---|
+| [ClosedHierarchy](src/CSharpCodeRecipes/Recipes/ClosedHierarchy/README.md) | 別アセンブリからの派生を禁じる閉じた型階層 |
 | [NoPermissionPublicMethod](src/CSharpCodeRecipes/Recipes/NoPermissionPublicMethod/README.md) | Override以外のPublicメソッドの作成禁止 |
 
 ## 実行
